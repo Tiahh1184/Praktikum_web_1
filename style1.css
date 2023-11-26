@@ -1,21 +1,20 @@
-.container{
+ header{
+    background-color: aquamarine;
+    margin: 10px;
+}
+header ul{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0.5em;
+    margin: 0;
 }
-.kotak{
-    height: 500px;
-    width: 150px;
-    border: 1px solid;
+header li{
+    margin: 0 1em;
 }
-.kuning{
-background-color: yellow;
+header li.logo{
+    margin-right: auto;
 }
-.oren{
-background-color: orange;
-}
-.hijau{
-background-color: greenyellow;
-}
-.biru{
-background-color: aqua;
+header img.logo{
+    width: 30%;
 }
