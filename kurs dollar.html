@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+        <legend>Kurs Rupiah + Mata Uang Asing</legend>
+        <table>
+            <tr>
+                <td>Masukan Nilai</td>
+                <td>Mata Uang</td>
+                <td>Nilai Rupiah</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="bil">
+                </td>
+                <td>
+                    <select id="mata_uang" onclick="hitungKurs()">
+                        <option value="">---PILIH---</option>
+                        <option value="USD">USD</option>
+                        <option value="SGD">SGD</option>
+                        <option value="EURO">EURO</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="hasil">
+                </td>
+            </tr>
+        </table>
+    <script>
+        function hitungKurs()
+        {
+            let bil = document.getElementById("bil").value;
+            let valas = document.getElementById("mata_uang").value;
+
+            if(valas == "USD"){
+                const dolar_us = 9915;
+                document.getElementById("hasil").value = "Rp. " + bil*dolar_us;
+            } else if(valas == "SGD"){
+                const dolar_sg = 13472;
+                document.getElementById("hasil").value = "Rp. " + bil*dolar_sg;
+            } else if(valas == "EURO"){
+                const euro = 15888;
+                document.getElementById("hasil").value = "Rp. " + bil*riyal;
+            }
+        }    
+    </script>
+</body>
+</html>

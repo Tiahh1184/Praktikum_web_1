@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas dan Keliling Lingkaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hitung Luas dan Keliling Lingkaran</h2>
+
+    <label for="radius">Masukkan jari-jari lingkaran:</label>
+    <input type="number" id="radius" placeholder="Jari-jari">
+
+    <br><br>
+
+    <button onclick="hitung()">Hitung</button>
+
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function hitung() {
+            var radius = document.getElementById("radius").value;
+
+            if (isNaN(radius)) {
+                alert("Masukkan angka yang valid untuk jari-jari lingkaran.");
+                return;
+            }
+
+            // Menghitung luas dan keliling lingkaran
+            var luas = Math.PI * radius * radius;
+            var keliling = 2 * Math.PI * radius;
+
+            // Menampilkan hasil
+            var resultMessage = "Luas Lingkaran: " + luas.toFixed(2) + "<br>Keliling Lingkaran: " + keliling.toFixed(2);
+            document.getElementById("result").innerHTML = resultMessage;
+        }
+    </script>
+
+</body>
+</html>
