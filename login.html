@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>login authentication</title>
+</head>
+<body>
+    <!-- kerangka kerja HTMl -->
+    <h2>login</h2>
+    <form id="loginform" onsubmit="login()">
+        <label for="username">username</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="login">
+        <input type="reset" value="batal">
+    </form>
+
+    <!-- program yang di jalankan oleh javascript -->
+    <script>
+        function login(){
+            //mengambil nilai username dan password dari form
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            let form = document.getElementById("loginform"); //redirect ke web berbeda
+
+            //memeriksa apakah username dan password sesuai dengan yang di tentukan
+            if (user == "MUTHI" && pass == "12345"){
+                alert("login berhasil");
+                form.setAttribute("action", "kalkulator.html");
+            }
+            else {
+                alert("login gagal, coba lagi!");
+            }
+        }
+    </script>
+</body>
+</html>

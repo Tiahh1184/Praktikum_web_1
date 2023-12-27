@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Mata Uang</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h2>Konversi Mata Uang</h2>
+        </legend>
+        <table border="1">
+            <!-- Baris 1 -->
+            <tr>
+            <th> Masukan Nilai</th>
+            <th> Jenis Uang</th>
+            <th> Nilai Rupiah</th>
+            </tr>
+
+            <!-- Baris 2 -->
+            <td> 
+                <input type="number" id="jumlah" name="jumlah" onchange="Konversi ()">
+            </td>
+
+            <td>
+                <select name="jenis" id="jenis" onchange="Konversi ()">
+                    <option value="USD">Dollar US</option>
+                    <option value="SGD">Dollar Singapura</option>
+                    <option value="MYR">Ringgit malaysia</option>
+                    <option value="JPY">Yen Jepang</option>
+                    <option value="EUR">Euro</option>
+                    <option value="SAR">Riyal Arab</option>
+                </select>
+            </td>
+
+            <!-- Baris 3 -->
+            <td>
+            <input type="text" id="hasil" readonly>
+            </td>
+        </table>
+    </fieldset>
+
+    <!-- Script -->
+    <script>
+        function Konversi () {
+            // Tangkap Jumlah & Jenis Saya
+            let jumlah = document.getElementById("jumlah").value;
+            let jenis = document.getElementById("jenis").value;
+            let nilaiTukar = 0;
+
+            // Cek Jenis Mata Uang  -> dapat nilaiTukar
+            switch (jenis) {
+                case "USD":
+                nilaiTukar = 9915;
+                break;
+
+                case "SGD":
+                nilaiTukar = 13472;
+                break;
+                
+                case "MYR":
+                nilaiTukar = 874;
+                break;
+
+                case "JPY":
+                nilaiTukar = 120;
+                break;
+
+                case "EUR":
+                nilaiTukar = 15888;
+                break;
+
+                case "SAR":
+                nilaiTukar = 3592;
+                break;
+            }
+
+            // Rumus Menghitung Konversi
+             let hasilKonversi  = jumlah * nilaiTukar;
+
+            // Menampilkan Hasil
+            document.getElementById("hasil").value = hasilKonversi;
+
+        }
+    </script>
+</body>
+</html>
